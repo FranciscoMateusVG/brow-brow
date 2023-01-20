@@ -1,5 +1,6 @@
 import React from "react";
 import type { Exercicio } from "./interfaces";
+import { GoDeviceCameraVideo } from "react-icons/go";
 
 interface IBodyProps {
   handleRowClick: () => void;
@@ -9,17 +10,18 @@ interface IBodyProps {
 export const Body: React.FC<IBodyProps> = ({ handleRowClick, exercicios }) => {
   return (
     <>
-      <tbody className="border-b-2 border-teal-500">
+      <tbody className="border-b-2 border-terc">
         {exercicios.map((exercicio, index) => (
           <tr
             key={index}
             onClick={() => handleRowClick()}
-            className=" cursor-pointer duration-300 odd:bg-white even:bg-gray-100  hover:bg-gray-100 hover:text-teal-500"
+            className=" relative cursor-pointer text-white duration-300 odd:bg-prim  even:bg-prim-light hover:bg-prim-dark"
           >
             <td className=" px-4 py-2">{exercicio.nome}</td>
             <td className=" px-4 py-2 text-center">{exercicio.series}</td>
-            <td className=" px-4 py-2">{exercicio.repeticoes}</td>
-            <td className=" px-4 py-2">{exercicio.descanso}</td>
+            <td className=" px-4 py-2 text-center">{exercicio.repeticoes}</td>
+            <td className=" px-4 py-2 text-center">{exercicio.descanso}</td>
+            <GoDeviceCameraVideo className="absolute right-3 top-3 scale-75 text-white" />
           </tr>
         ))}
       </tbody>

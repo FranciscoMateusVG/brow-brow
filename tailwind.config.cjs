@@ -33,7 +33,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        prim: "#363636",
+        prim: {
+          light: "#444242",
+          DEFAULT: "#363636",
+          dark: "#262424",
+        },
         sec: "#CDE8EA",
         terc: "#F8FAC7",
       },

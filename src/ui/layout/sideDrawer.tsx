@@ -32,15 +32,13 @@ const SideDrawer: React.FC = () => {
       </div>
       {openDrawer ? (
         <RiArrowLeftCircleLine
-          className="mt-4 hidden cursor-pointer hover:animate-wiggle md:block"
-          color="#363636"
+          className="mt-4 hidden cursor-pointer text-sec hover:animate-wiggle md:block"
           size={35}
           onClick={() => setOpenDrawer(!openDrawer)}
         />
       ) : (
         <RiArrowRightCircleLine
-          className="mt-4 hidden cursor-pointer hover:animate-wiggle md:block"
-          color="#363636"
+          className="mt-4 hidden cursor-pointer text-sec hover:animate-wiggle md:block"
           size={35}
           onClick={() => setOpenDrawer(!openDrawer)}
         />

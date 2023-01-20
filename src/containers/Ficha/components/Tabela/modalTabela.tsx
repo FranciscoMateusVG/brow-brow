@@ -14,7 +14,7 @@ export const ModalTabela: React.FC<IModalTabelaProps> = ({
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={() => setModalIsOpen(false)}
-        className=" rounded-lg bg-white p-6"
+        className=" rounded-lg bg-prim-dark p-6"
         overlayClassName="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60"
       >
         <div className="flex justify-around gap-10">
@@ -25,8 +25,8 @@ export const ModalTabela: React.FC<IModalTabelaProps> = ({
             ></iframe>
           </div>
           <div className="flex w-[300px] flex-col justify-center">
-            <h1 className="text-lg font-medium">Descrição</h1>
-            <p className="">
+            <h1 className="text-lg font-medium text-terc">Descrição</h1>
+            <p className="text-white">
               Só escapulas: deixar ombro alongar o movimento acima e puxar
               apenas com as escapulas fechando pra trás e pra baixo. Nas 8reps
               aí sim movimento completo com o cotovelo
