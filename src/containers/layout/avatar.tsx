@@ -3,7 +3,11 @@ import { createAvatar } from "@dicebear/core";
 import { funEmoji } from "@dicebear/collection";
 import Image from "next/image";
 
-function Avatar() {
+interface IAvatar {
+  url: string | undefined | null;
+}
+
+export const Avatar: React.FC<IAvatar> = ({ url }) => {
   const [avatar, setAvatar] = useState<string>("");
 
   useEffect(() => {
@@ -26,9 +30,7 @@ function Avatar() {
     };
   }, []);
 
-  return avatar ? (
-    <Image width={50} height={50} src={avatar} alt="Avatar" />
+  return url ? (
+    <img src={url} alt="Avatar" className="h-12 w-12 rounded-full" />
   ) : null;
-}
-
-export default Avatar;
+};

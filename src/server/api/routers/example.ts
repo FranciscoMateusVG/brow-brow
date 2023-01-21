@@ -11,8 +11,9 @@ export const exampleRouter = createTRPCRouter({
       };
     }),
 
-  getAll: publicProcedure.query(({ ctx }) => {
-    return ctx.prisma.example.findMany();
+  getUser: publicProcedure.query(({ ctx }) => {
+    const userId = ctx.session.user.id;
+    return ctx.prisma.user.findUnique({ where: { oauth_id: userId } });
   }),
 
   getSecretMessage: protectedProcedure.query(() => {

@@ -2,7 +2,7 @@ import { type AppType } from "next/app";
 import { api } from "../utils/api";
 import { UserProvider } from "@auth0/nextjs-auth0/client";
 import "../styles/globals.css";
-import Layout from "../ui/layout/Layout";
+import Layout from "../containers/layout/Layout";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (

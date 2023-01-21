@@ -29,7 +29,7 @@ type Session = {
 };
 
 type CreateContextOptions = {
-  session: Session | null;
+  session: Session;
 };
 
 /**
@@ -57,7 +57,7 @@ export const createTRPCContext = (opts: CreateNextContextOptions) => {
   // const { req, res } = opts;
 
   // Get the session from the server using the unstable_getServerSession wrapper function
-  const session = null;
+  const session = { user: { id: "", email: "", name: "", image: "" } };
 
   return createInnerTRPCContext({
     session,
