@@ -17,10 +17,16 @@
  *
  */
 import { type CreateNextContextOptions } from "@trpc/server/adapters/next";
-import { type Session } from "next-auth";
-
-import { getServerAuthSession } from "../auth";
 import { prisma } from "../db";
+
+type Session = {
+  user: {
+    id: string;
+    email: string;
+    name: string;
+    image: string;
+  };
+};
 
 type CreateContextOptions = {
   session: Session | null;
@@ -47,11 +53,11 @@ const createInnerTRPCContext = (opts: CreateContextOptions) => {
  * process every request that goes through your tRPC endpoint
  * @link https://trpc.io/docs/context
  */
-export const createTRPCContext = async (opts: CreateNextContextOptions) => {
-  const { req, res } = opts;
+export const createTRPCContext = (opts: CreateNextContextOptions) => {
+  // const { req, res } = opts;
 
   // Get the session from the server using the unstable_getServerSession wrapper function
-  const session = await getServerAuthSession({ req, res });
+  const session = null;
 
   return createInnerTRPCContext({
     session,
