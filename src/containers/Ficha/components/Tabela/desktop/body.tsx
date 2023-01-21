@@ -1,6 +1,5 @@
 import React from "react";
-import type { Exercicio } from "./interfaces";
-import { GoDeviceCameraVideo } from "react-icons/go";
+import type { Exercicio } from "../interfaces";
 
 interface IBodyProps {
   handleRowClick: () => void;
@@ -21,7 +20,6 @@ export const Body: React.FC<IBodyProps> = ({ handleRowClick, exercicios }) => {
             <td className=" px-4 py-2 text-center">{exercicio.series}</td>
             <td className=" px-4 py-2 text-center">{exercicio.repeticoes}</td>
             <td className=" px-4 py-2 text-center">{exercicio.descanso}</td>
-            <GoDeviceCameraVideo className="absolute right-3 top-3 scale-75 text-white" />
           </tr>
         ))}
       </tbody>

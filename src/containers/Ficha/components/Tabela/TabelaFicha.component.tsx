@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Body } from "./body";
-import { Header } from "./header";
+import { TabelaDesktop } from "./desktop/tabelaDesktop";
 import type { Exercicio } from "./interfaces";
+import { TabelaMobile } from "./mobile/tabelaMobile";
 import { ModalTabela } from "./modalTabela";
 
 export const TabelaFicha: React.FC = () => {
@@ -20,10 +20,8 @@ export const TabelaFicha: React.FC = () => {
 
   return (
     <>
-      <table className="m-auto min-w-[750px] table-auto  scale-110 overflow-hidden rounded-t-lg text-base shadow-md">
-        <Header />
-        <Body handleRowClick={handleRowClick} exercicios={exercicios} />
-      </table>
+      <TabelaDesktop handleRowClick={handleRowClick} exercicios={exercicios} />
+      <TabelaMobile />
       <ModalTabela modalIsOpen={modalIsOpen} setModalIsOpen={setModalIsOpen} />
     </>
   );
