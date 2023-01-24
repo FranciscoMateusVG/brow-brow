@@ -18,18 +18,13 @@
  */
 import { type CreateNextContextOptions } from "@trpc/server/adapters/next";
 import { prisma } from "../db";
-
-type Session = {
-  user: {
-    id: string;
-    email: string;
-    name: string;
-    image: string;
-  };
-};
+import type { Session } from "@auth0/nextjs-auth0";
+import { getSession } from "@auth0/nextjs-auth0";
 
 type CreateContextOptions = {
-  session: Session;
+  session: Session | null | undefined;
+  req: NextApiRequest;
+  res: NextApiResponse;
 };
 
 /**
@@ -53,13 +48,14 @@ const createInnerTRPCContext = (opts: CreateContextOptions) => {
  * process every request that goes through your tRPC endpoint
  * @link https://trpc.io/docs/context
  */
-export const createTRPCContext = (opts: CreateNextContextOptions) => {
-  // const { req, res } = opts;
+export const createTRPCContext = async (opts: CreateNextContextOptions) => {
+  const { req, res } = opts;
 
-  // Get the session from the server using the unstable_getServerSession wrapper function
-  const session = { user: { id: "", email: "", name: "", image: "" } };
+  const session = await getSession(req, res);
 
   return createInnerTRPCContext({
+    req,
+    res,
     session,
   });
 };
@@ -72,6 +68,7 @@ export const createTRPCContext = (opts: CreateNextContextOptions) => {
  */
 import { initTRPC, TRPCError } from "@trpc/server";
 import superjson from "superjson";
+import type { NextApiRequest, NextApiResponse } from "next";
 
 const t = initTRPC.context<typeof createTRPCContext>().create({
   transformer: superjson,

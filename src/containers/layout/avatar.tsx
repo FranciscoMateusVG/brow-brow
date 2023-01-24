@@ -20,7 +20,6 @@ export const Avatar: React.FC<IAvatar> = ({ url }) => {
       }).toDataUri();
 
       if (active) {
-        console.log(avatar);
         setAvatar(avatar);
       }
     })();
