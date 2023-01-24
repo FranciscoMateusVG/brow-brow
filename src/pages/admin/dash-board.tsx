@@ -1,16 +1,16 @@
 import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 import { type NextPage } from "next";
 import React from "react";
-import { FichaContainer } from "../../containers/Alunos/Ficha/Ficha.container";
+import { DashBoardContainer } from "../../containers/Admin/DashBoard/DashBoard.container";
 
-const Ficha: NextPage = () => {
+const DashBoard: NextPage = () => {
   return (
     <div className="flex h-screen justify-center bg-prim align-middle">
-      <FichaContainer />
+      <DashBoardContainer />
     </div>
   );
 };
 
-export default Ficha;
+export default DashBoard;
 
 export const getServerSideProps = withPageAuthRequired();

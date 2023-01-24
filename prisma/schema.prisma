@@ -40,9 +40,9 @@ model Exercicio {
 
 model User {
   id         String  @id @default(cuid())
-  oauth_sid  String?  @unique @default(cuid())
   oauth_sub  String?  @unique @default(cuid())
   role       String  @default("user")
+  name       String?
   Ficha    Ficha[]
 }
 

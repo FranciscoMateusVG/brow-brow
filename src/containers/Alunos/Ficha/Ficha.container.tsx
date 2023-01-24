@@ -1,5 +1,5 @@
 import React from "react";
-import { api } from "../../utils/api";
+import { api } from "../../../utils/api";
 import { TabelaFicha } from "./components/Tabela/TabelaFicha.component";
 
 export const FichaContainer: React.FC = () => {
