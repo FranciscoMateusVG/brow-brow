@@ -4,13 +4,15 @@ import { useUser } from "@auth0/nextjs-auth0/client";
 
 // interface IHeader {}
 const Header: React.FC = () => {
+  //@ts-ignore
   const { user } = useUser();
+  console.log(user);
   return (
-    <header className="absolute mb-1 flex w-screen items-center justify-between bg-prim py-4 px-8 shadow-xl">
-      <h1 className="text-lg font-medium text-sec">Área do Aluno</h1>
+    <header className="bg-prim absolute mb-1 flex w-screen items-center justify-between py-4 px-8 shadow-xl">
+      <h1 className="text-sec text-lg font-medium">Área do Aluno</h1>
       <div className="flex gap-5 ">
         <div className="hidden md:block">
-          <p className="font-bold text-sec">Bem vindo!</p>
+          <p className="text-sec font-bold">Bem vindo!</p>
           <p className="text-terc">{user && user.name}</p>
         </div>
         {/* TODO: fallback here for picture */}

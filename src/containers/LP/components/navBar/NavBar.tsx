@@ -11,7 +11,7 @@ export const NavBar: React.FC = () => {
   const icon = (
     <Image
       className="self-center"
-      src={"but_icon.svg"}
+      src={"navBar/but_icon.svg"}
       height={10}
       width={10}
       alt={"Vita Libratum Logo"}
@@ -21,16 +21,17 @@ export const NavBar: React.FC = () => {
   return (
     <nav className="flex h-[70px] justify-between bg-black px-4 py-4 ">
       <Image
-        src={"vector.svg"}
+        src={"navBar/vector.svg"}
         height={25}
         width={25}
         alt={"Vita Libratum Logo"}
       />
       <Image
-        src={"LOGO.svg"}
+        src={"navBar/LOGO.svg"}
         height={30}
         width={45}
         alt={"Vita Libratum Logo"}
+        className="ml-16"
       />
       <Button onClick={login} size="sm" type="primary" icon={icon} />
     </nav>

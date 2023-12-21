@@ -11,7 +11,7 @@ export const Hero: React.FC = () => {
   const icon = (
     <Image
       className="self-center "
-      src={"but_icon2.svg"}
+      src={"navbar/but_icon2.svg"}
       height={15}
       width={15}
       alt={"Vita Libratum Logo"}
@@ -28,19 +28,37 @@ export const Hero: React.FC = () => {
 
       <Image
         className="self-center"
-        src={"/cellphones.png"}
+        src={"/landingPage/cellphones.png"}
         width={230}
         height={1258}
         alt={"Cell Phone Images"}
       />
 
-      <Button onClick={login} size="md" type="secondary" icon={icon} />
-      <div className="absolute top-[-50px] right-[-200px] h-full w-full">
-        <Image src={"/last.png"} fill alt={"Vita Libratum Logo"} />
+      <Button
+        className="mb-20"
+        onClick={login}
+        size="md"
+        type="secondary"
+        icon={icon}
+      />
+      <div className="absolute  top-[-50px] right-[-200px] h-full w-full">
+        <Image
+          src={"/landingPage/waves/last.png"}
+          fill
+          alt={"Vita Libratum Logo"}
+        />
       </div>
-      <Image src={"/past.png"} fill alt={"Vita Libratum Logo"} />
+      <Image
+        src={"/landingPage/waves/past.png"}
+        fill
+        alt={"Vita Libratum Logo"}
+      />
       <div className="absolute bottom-[-10px] left-0 h-24 w-screen">
-        <Image src={"waves2.svg"} fill alt={"Vita Libratum Logo"} />
+        <Image
+          src={"/landingPage/waves/waves2.svg"}
+          fill
+          alt={"Vita Libratum Logo"}
+        />
       </div>
     </section>
   );

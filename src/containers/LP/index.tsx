@@ -5,7 +5,7 @@ import { Hero } from "./components/hero/Hero";
 import { NavBar } from "./components/navBar/NavBar";
 import { Sample } from "./components/sample/Sample";
 
-export const LandinPage: React.FC = () => {
+export const LandingPage: React.FC = () => {
   return (
     <main>
       <NavBar />
